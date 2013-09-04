@@ -1,4 +1,5 @@
-front-end-web-demos
-===================
+Front End Web Development Demos
+===============================
 
-Demos of front end web development with JavaScript.
+Demos of front end web development including JavaScript, CSS, and HTML Demos.
+
