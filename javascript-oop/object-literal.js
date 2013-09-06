@@ -8,7 +8,9 @@ var obj_from_literal, obj_from_obj_ctor;
 obj_from_literal = {
   "name": "Francis",
   "date": new Date("2013-03-13")
-}
+};
+
+obj_from_literal.dynamically_added_proerty = "some new value";
 
 /* properties can be accessed using either dot syntax or array syntax. It's the same thing.
  */
