@@ -2,19 +2,6 @@
  * Copyright 2013 Tom Aratyn <tom@aratyn.name>
  */
 
-/* You can execute this file in Firefox Scratchpad by:
- * 1. Open Firefox
- * 2. Open ScratchPad (Tools-> Web Developer -> Scratchpad or Shift + F4)
- * 3. Open this file (File-> Open then find the file)
- * 4. Run the file (Execute-> Run)
- * 
- * In JavaScript something is truthy when it evaluates to true. 
- *
- * BUT not all things which evaluate to true neccessairily EQUAL (==) to true.
- * (Obviously nothing except true is Strictly Equal (===) to true)
- * Let's look at some demos:
- */
-
 var anArray = [],
     anObject = {},
     aString = "", 
