@@ -10,7 +10,7 @@ obj_from_literal = {
   "date": new Date("2013-03-13")
 };
 
-obj_from_literal.dynamically_added_proerty = "some new value";
+obj_from_literal.any_new_property_name_can_go_here = "some new value";
 
 /* properties can be accessed using either dot syntax or array syntax. It's the same thing.
  */

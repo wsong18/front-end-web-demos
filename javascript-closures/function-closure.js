@@ -1,11 +1,7 @@
 /* Copyright 2013 Tom Aratyn <tom@aratyn.name> */
 
 var hello_world_function,
-  old_time_announcer1,
-  wait_threshold,
-  old_time_announcer2,
-  greet_franics_function,
-  greet_john_paul_function;
+  old_time_announcer1;
 
 function say_hello_world() {
   console.log("hello world!")
@@ -50,33 +46,37 @@ old_time_announcer1 = get_old_time_announcer();
 // announce the first time.
 old_time_announcer1();
 
-wait_threshold = Date.now();
-while (wait_threshold + 50 < Date.now);
+// setTimeout will call this function in 50 milliseconds.
+setTimeout(function () {
+  var old_time_announcer2,
+  greet_franics_function,
+  greet_john_paul_function;
 
-// get another announcer.
-old_time_announcer2 = get_old_time_announcer();
-// announce the second time.
-old_time_announcer2();
+  // get another announcer.
+  old_time_announcer2 = get_old_time_announcer();
+  // announce the second time.
+  old_time_announcer2();
 
-// just for fun, announce it again.
-old_time_announcer1();
+  // just for fun, announce it again.
+  old_time_announcer1();
 
-/* This function will return a function that greets you by name.
- */
-function get_greeting_function(name) {
-
-  /* This function will greet a person based on the name provided to the outer function
+  /* This function will return a function that greets you by name.
    */
-  return function () {
-    console.log("Hello " + name);
-  };
-}
+  function get_greeting_function(name) {
 
-// get a function that says hello to Francis
-greet_franics_function = get_greeting_function("Francis");
-greet_franics_function();
+    /* This function will greet a person based on the name provided to the outer function
+     */
+    return function () {
+      console.log("Hello " + name);
+    };
+  }
 
-// get a function that says hello to John Paul
-greet_john_paul_function = get_greeting_function("John Paul");
-greet_john_paul_function();
+  // get a function that says hello to Francis
+  greet_franics_function = get_greeting_function("Francis");
+  greet_franics_function();
+
+  // get a function that says hello to John Paul
+  greet_john_paul_function = get_greeting_function("John Paul");
+  greet_john_paul_function();
+}, 50);
 

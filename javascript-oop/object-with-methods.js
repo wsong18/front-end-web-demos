@@ -32,5 +32,5 @@ var product = new Product("bananas", 1.99);
 
 console.log("The product's name is " + product.name);
 
-console.log("Three of bananas cost this much: " + product.calculate_total(3));
+console.log("Three bananas cost this much: " + product.calculate_total(3));
 
