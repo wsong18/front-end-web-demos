@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basic Page With Inline JavaScript</title>
+    </head>
+    <body>
+        <h1>This page has inline javascript.</h1>
+        <!-- the below paragraph is empty -->
+        <p id="put-text-in-here"></p>
+        <p class="same-text"></p>
+        <p class="same-text"></p>
+        <ul>
+            <li>This item does not have a class.</li>
+            <li class="same-text"></li>
+        </ul>
+        <!--
+          It is best to have your javascript at the very bottom of your.
+        -->
+        <script>
+            document.getElementById("put-text-in-here").innerHTML = "This text was added by JavaScript";
+
+            var i, sameTextElements = document.getElementsByClassName("same-text");
+            for(i = 0; i < sameTextElements.length; i += 1) {
+                sameTextElements[i].innerHTML = "this is the same text for all the elements of `class same-text`"
+            }
+        </script>
+    </body>
+</html>
