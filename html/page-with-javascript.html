@@ -17,12 +17,14 @@
           It is best to have your javascript at the very bottom of your.
         -->
         <script>
-            document.getElementById("put-text-in-here").innerHTML = "This text was added by JavaScript";
+          var element = document.getElementById("put-text-in-here");
+          element.textContent = "This text was added by JavaScript";
 
             var i, sameTextElements = document.getElementsByClassName("same-text");
             for(i = 0; i < sameTextElements.length; i += 1) {
-                sameTextElements[i].innerHTML = "this is the same text for all the elements of `class same-text`"
+                sameTextElements[i].textContent = "this is the same text for all the elements of `class same-text`"
             }
+            
         </script>
     </body>
 </html>
