@@ -61,3 +61,13 @@ console.log(cat.bark);
 /* no it doesn't. cat.bark === undefined */
 cat.speak();
 /* but cat can still speak because the prototype property is different from the prototype chain ([[prototype]])
+
+/* but if I say that all animals are hairy */
+animal.hairy = true;
+/* then all dog and cat are hairy too */
+console.log("is dog hairy? " + dog.hairy);
+console.log("is cat hairy? " + cat.hairy);
+/* because when we look up the hairy property on dog or cat, JavaScript will search the prototype
+ * chain [[prototype]] for any objects that have the hairy property. `dog` itself doesn't have that property.
+ * But animal is in its prototype chain [[prototype]] so animal's hairy property is used.
+ */
