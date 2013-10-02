@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+          In this demo we're going to populate some lists at run time.
+
+          Remember not to use Firefox Scratchpad to view this data. Just open
+          in your favourite browser and your favourite text editor (not word
+          processor!).
+        -->
+        <title>Creating A List</title>
+    </head>
+    <body>
+        <!--
+          All these unordered list tags are emtpy. But if you view them in the
+          browser you'll see that there are items there. These items have been
+          added at runtime using DOM modifications.
+        -->
+        <h2>All the Books</h2>
+        <!-- These are all the books we have. -->
+        <ul id="listOfBooks">
+        </ul>
+        <!--
+          Of the books we have, these are part of the Pentateuch (the Five
+          Books of Moses, shared by all the Abrahamic faiths).
+        -->
+        <h2>Five Books of Moses</h2>
+        <ul id="pentateuch">
+        </ul>
+        <!--
+          These are not part of the Pentateuch.
+        -->
+        <h2>Other Books</h2>
+        <ul id="notPentateuch">
+        </ul>
+        <script>
+            /* books is an array of biblical books, some are part of the
+             * pentateuch and others aren't
+             */
+          var books =
+            [
+              {name: "Genesis", pentateuch: true},
+              {name: "Exodus", pentateuch: true},
+              {name: "Leviticus", pentateuch: true},
+              {name: "Deutronomy", pentateuch: true},
+              {name: "Numbers", pentateuch: true},
+              {name: "Psalms", pentateuch: false},
+              {name: "Proverbs", pentateuch: false},
+              {name: "Job", pentateuch: false}
+            ],
+            /* Below we get a reference in JavaScript to the ul elements in the DOM.
+             * We need this in order to add children (new `li` elements).
+             */
+            listOfBooksElement = document.getElementById("listOfBooks"),
+            pentateuchBooksListElement = document.getElementById("pentateuch"),
+            notPentateuchBooksListElement = document.getElementById("notPentateuch");
+
+          /* to add each book we're going to use the forEach method of the
+           * books array object and pass in a function expression (a closure)
+           * that does the creation of new li elements and adds them to the DOM.
+           */
+          books.forEach(function (book, index, booksArray) {
+
+            /* bookElement is a newly created `li` element BUT it's not yet
+             * part of the DOM.
+             */
+            var bookElement = document.createElement("li"),
+              pentateuchBookElement,
+              notPentateuchBookElement;
+            /* here we set the text inside the bookElement `li` */
+            bookElement.textContent = book.name;
+            /* and finally we add element to the DOM by making it a child of
+             * the listOfBookElements `ul` element.
+             */
+            listOfBooksElement.appendChild(bookElement);
+            /* only after the above appendChild call has completed will a new
+             * list item (the `li` element referenced by bookElement) appear
+             * on the screen.
+             */
+
+            /* is the book in the pentateuch? */
+            if (book.pentateuch) {
+              /* we need to create a new li element to add to the pentateuch
+               * ul.
+               *
+               * As an exercise, try to add the above `li` (`bookElement`).
+               * What's the difference?
+               */
+              pentateuchBookElement = document.createElement("li");
+              pentateuchBookElement.textContent = book.name;
+              pentateuchBooksListElement.appendChild(pentateuchBookElement);
+            }
+            else {
+              /* and again, the same thing for books which are not part of the
+               * pentateuch.
+               *
+               * As an exercise, can you figure out how to remove this duplicate
+               * code? Try it using a text editor and browser.
+               */
+              notPentateuchBookElement = document.createElement("li");
+              notPentateuchBookElement.textContent = book.name;
+              notPentateuchBooksListElement.appendChild(notPentateuchBookElement);
+            }
+          });
+        </script>
+    </body>
+</html>
