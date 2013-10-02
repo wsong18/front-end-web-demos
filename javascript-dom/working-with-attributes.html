@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+  <head>
+    <!--
+      This demo will show how to work with html attributes in JavaScript.
+
+      In this demo we will create an image, set it's `src` attribute and then
+      add it to the DOM.
+    -->
+    <title>Working with Attributes</title>
+  </head>
+  <body>
+    <!--
+      In HTML, we set attributes on by putting a key-value pair after the tag
+      name in the opening tag.
+      Like this:
+      <div id="this-is-the-id">
+    -->
+    <div id="picture-div">
+    </div>
+    <script>
+      var pictureDivElement = document.getElementById("picture-div"),
+        imageElement = document.createElement("img");
+
+      /* Every element has some common methods. One of those is `getAttribute`.
+       * `getAttribute` will return the value of the named given attribute.
+       * Below, we log a our div's id attribute.
+       */
+      console.log(pictureDivElement.getAttribute("id"));
+
+      /* Here we set the `src` attribute of our image element.
+       * Without this attribute the browser doesn't know what image to display. 
+       */
+      imageElement.setAttribute("src", "http://imgs.xkcd.com/comics/tags.png");
+
+      /* and finally we add our image to the DOM.
+       */
+      pictureDivElement.appendChild(imageElement);
+    </script>
+  </body>
+</html>
