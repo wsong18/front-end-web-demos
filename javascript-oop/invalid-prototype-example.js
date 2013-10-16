@@ -6,9 +6,9 @@
 function Foo() {
 }
 Foo.prototype = { a: 3};
+/* notice that this does work */
 console.log(Foo.a);
 
-/* notice that this does work */
 var foo = new Foo();
-console.log(foo.a);
 /* the new operator sets the `[[prototype]]` from the `prototype` property. */
+console.log(foo.a);
