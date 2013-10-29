@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <!--
+    The first line must be a DOCTYPE. It tells the browser what kind of page to
+    render (html 5, xhtml, html4, xml, etc.).
+
+    The root of the tree is the <html> tag. Notice that tags must be closed
+    (scroll down to the last line to see that even <html> is closed
+    with </html>
+
+    <!-- is the start of a comment.
+
+    Here's how we close a comment:
+    -->
+    <head>
+        <!-- the head element lets us provide meta information -->
+
+        <title>Basic HTML Page</title>
+        <!-- like the page title (check out the title of the browser window) -->
+
+    </head>
+    <body>
+        <!-- the body is where put all the things we want to display. -->
+
+        <h1>This is a basic html page.</h1>
+        <!--
+            A level 1 header is a block level tag.
+
+            It means that all of this page is about the topic described by the
+            text in the h1 tag.
+        -->
+        <p> Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum </p>
+        <p>Notice how html is not white space sensitive:     There are five spaces before this sentence.
+
+
+        And this one is three lines down.</p>
+
+        <h2>Inline Elements</h2>
+        <p>This paragraph has some text marked up by inline tags. Inline tags
+            might be <a href="#">an anchor tag (used to make links)</a>,
+            <em>emphasized text with the &lt;em&gt; tag</em>, or <strong>or
+            strongly emphasized</strong>. One inline element comes with no
+            style by default: <span>the span element</span>
+        </p>
+
+        <h2>Entities</h2>
+        <p>This paragraph has some special characters created using html
+            entities: &gt; &lt; &amp;. This lets us render potentially
+            dangerous glyphs (like &gt;) which could be interpreted by the
+            browser as code.
+        </p>
+
+        <h2>Images</h2>
+        <p>This is a paragraph with an image. <img src="3d-dom-image.png">.</p>
+
+        <p>Images can also be by themselves:</p>
+        <img src="3d-dom-image.png">
+        <h2>Lists</h2>
+        <ul>
+            <li>This is an unorderd list</li>
+            <li>
+                What makes it unordered is:
+                <ul>
+                    <li>The &lt;ul&gt; parent tag</li>
+                </ul>
+            </li>
+            <li>It gets rendered with bullets by default.</li>
+        </ul>
+
+        <ol>
+            <li>This is an orderd list</li>
+            <li>
+                What makes it ordered is:
+                <ol>
+                    <li>The &lt;ol&gt; parent tag</li>
+                </ol>
+            </li>
+            <li>It gets rendered with numbers by default.</li>
+        </ol>
+    </body>
+</html>
