@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8" />
+   <title>JSON - turtlesback.ca</title>
+   <style>
+      #table-1 td:first-child {color: blue; font-weight: bolder;}
+      #table-1 td:first-child ~ td {font-family: monospace;}
+      #table-1 tr:nth-child(2n+1) {background: #d8d8d8;}
+      #table-1 tr:nth-child(2n) {background: #f0f0f0;}
+   </style>
+   <script type="text/javascript">
+      var httpRequest;
+    
+      function makeRequest() {
+        var url = 'http://turtlesback.ca/s/nation/' 
+                  + document.getElementById("number").value;
+        // make an HTTP request object
+        if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+          httpRequest = new XMLHttpRequest();
+        } else if (window.ActiveXObject) { // IE
+          try {
+            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+          } 
+          catch (e) {
+            try {
+              httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+            } 
+            catch (e) {}
+          }
+        }
+    
+        if (!httpRequest) {
+          alert('Giving up :( Cannot create an XMLHTTP instance');
+          return false;
+        }
+        
+        // register a request listener
+        httpRequest.onreadystatechange = showContents;
+        // make the HTTP request 
+        httpRequest.open('GET', url);
+        httpRequest.send();
+      }
+    
+      // the function that handles the serve response
+      function showContents() {
+        
+        // check for response state
+        if (httpRequest.readyState === 4) {
+          // check the respone code
+          if (httpRequest.status === 200) {
+            // Javascript function JSON.parse to parse JSON data
+            var jsonObj = JSON.parse(httpRequest.responseText);
+    
+            // jsonObj variable now contains the data structure and can
+            // be accessed as jsonObj.name and jsonObj.country.
+            document.getElementById("OfficialName").innerHTML =  jsonObj.OfficialName;
+            document.getElementById("Address").innerHTML =  jsonObj.Address;
+            document.getElementById("PostalCode").innerHTML =  jsonObj.PostalCode;
+            document.getElementById("CenterLat").innerHTML =  jsonObj.CenterLat;
+            document.getElementById("CenterLong").innerHTML =  jsonObj.CenterLong;
+            document.getElementById("CommunitySite").innerHTML =  jsonObj.CommunitySite;
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      }
+   </script>
+ </head>
+ <body>
+   <h2>A First Nation</h2>
+   <table id="table-1" border="0">
+   <tr><td>OfficialName</td><td><div id="OfficialName"></div></td></tr>
+   <tr><td>Address</td><td><div id="Address"></div></td></tr>
+   <tr><td>PostalCode</td><td><div id="PostalCode"></div></td></tr>
+   <tr><td>CenterLat</td><td><div id="CenterLat"></div></td></tr>
+   <tr><td>CenterLong</td><td><div id="CenterLong"></div></td></tr>
+   <tr><td>CommunitySite</td><td><div id="CommunitySite"></div></td></tr>
+   </table>
+   <br />
+   <p>Enter a number (1~700):</p>
+   <input type="text" value="50" id="number"/>
+   <br />
+   <button type="ajaxButton" onclick="makeRequest()">Make a request</button>
+ </body>
+</html>

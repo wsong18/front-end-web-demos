@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>JSON example</title>
+<script language="javascript" >
+  
+  // from JavaScript object to JSON String
+  var object1 = { "language" : "Java", "course" : "JAC444" };
+  var JSONString1 = JSON.stringify(object1 );
+
+  // from JSON String  to JavaScript object
+  var JSONString2 =  '{ "language" : "C++", "course" : "OPP344" }';
+  var object2 =  JSON.parse(JSONString2);
+  
+  // from JSON array to avaScript objects
+  var aJsonArray = '[{"name": "Kevin", "age": 22, "gender": "m"},' +
+                     '{"name": "Tom", "age": 18, "gender": "m"},' +
+                     '{"name": "Kate", "age": 22, "gender": "f"},' +
+                     '{"name": "Steven", "age": 25, "gender": "m"},' +
+                     '{"name": "Bill", "age": 22, "gender": "m"}]';
+  var JSONString3 = '{"students": ' + aJsonArray + '}';
+  var object3 = eval('(' + JSONString3 + ')');
+                    
+  document.write("<h1>JSON with JavaScript example</h1>");
+  
+  document.write("<br>");
+  document.write("<h3>JSONString1 = " + JSONString1 + "</h3>");
+  document.write("<h3>Language = " + object1.language+"</h3>");  
+  document.write("<h3>Course = " + object1.course+"</h3>");   
+
+  document.write("<br>");
+  document.write("<h3>JSONString2 = " + JSONString2 + "</h3>");
+  document.write("<h3>Language = " + object2.language+"</h3>");  
+  document.write("<h3>Course = " + object2.course+"</h3>");
+  
+  document.write("<br>");
+  //document.write("<h3>JSONString3 = " + JSONString3 + "</h3>");
+  document.write("<h3>Name Age Gender</h3>");
+  document.write("<h3>" +
+                 object3.students[0].name + " " +
+                 object3.students[0].age + " " +
+                 object3.students[0].gender +
+                 "</h3>");
+  document.write("<h3>" +
+                 object3.students[1].name + " " +
+                 object3.students[1].age + " " +
+                 object3.students[1].gender +
+                 "</h3>");
+
+</script>
+</head>
+<body>
+</body>
+</html>
