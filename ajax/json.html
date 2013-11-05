@@ -19,7 +19,7 @@
                      '{"name": "Kate", "age": 22, "gender": "f"},' +
                      '{"name": "Steven", "age": 25, "gender": "m"},' +
                      '{"name": "Bill", "age": 22, "gender": "m"}]';
-  var JSONString3 = '{"students": ' + aJsonArray + '}';
+  var JSONString3 = '{"persons": ' + aJsonArray + '}';
   var object3 = eval('(' + JSONString3 + ')');
                     
   document.write("<h1>JSON with JavaScript example</h1>");
@@ -38,14 +38,14 @@
   //document.write("<h3>JSONString3 = " + JSONString3 + "</h3>");
   document.write("<h3>Name Age Gender</h3>");
   document.write("<h3>" +
-                 object3.students[0].name + " " +
-                 object3.students[0].age + " " +
-                 object3.students[0].gender +
+                 object3.persons[0].name + " " +
+                 object3.persons[0].age + " " +
+                 object3.persons[0].gender +
                  "</h3>");
   document.write("<h3>" +
-                 object3.students[1].name + " " +
-                 object3.students[1].age + " " +
-                 object3.students[1].gender +
+                 object3.persons[1].name + " " +
+                 object3.persons[1].age + " " +
+                 object3.persons[1].gender +
                  "</h3>");
 
 </script>
