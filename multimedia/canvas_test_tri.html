@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Canvas Test</title> 
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("my-canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        ctx.beginPath();
+		ctx.moveTo(175,50);
+		ctx.lineTo(200,75);
+		ctx.lineTo(200,25);
+		ctx.fill();
+		
+		// Filled triangle
+		ctx.beginPath();
+		ctx.moveTo(25,25);
+		ctx.lineTo(105,25);
+		ctx.lineTo(25,105);
+		ctx.fill();
+
+		// Stroked triangle
+		ctx.beginPath();
+		ctx.moveTo(125,125);
+		ctx.lineTo(125,45);
+		ctx.lineTo(45,125);
+		ctx.closePath();
+		ctx.stroke();
+      }
+    }
+  </script>
+  <style type="text/css"> 
+	canvas { border: 1px solid black; } 
+  </style> 
+ </head>
+ <body onload="draw();">
+   <canvas id="my-canvas" width="300" height="150"></canvas>
+ </body>
+</html>

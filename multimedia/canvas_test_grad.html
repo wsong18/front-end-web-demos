@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Canvas Test</title> 
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("my-canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        // Create gradient
+		var grd=ctx.createRadialGradient(75,50,5,90,60,100);
+		grd.addColorStop(0,"red");
+		grd.addColorStop(1,"white");
+
+		// Fill with gradient
+		ctx.fillStyle=grd;
+		ctx.fillRect(10,10,150,80);
+      }
+    }
+  </script>
+  <style type="text/css"> 
+	canvas { border: 1px solid black; } 
+  </style> 
+ </head>
+ <body onload="draw();">
+   <canvas id="my-canvas" width="200" height="150"></canvas>
+ </body>
+</html>

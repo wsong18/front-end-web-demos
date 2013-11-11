@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>Canvas Test</title> 
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("my-canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+
+        var img = new Image();
+		img.onload = function(){
+		ctx.drawImage(img,10,10);
+		ctx.beginPath();
+		ctx.moveTo(40,106);
+		ctx.lineTo(80,76);
+		ctx.lineTo(113,86);
+		ctx.lineTo(180,25);
+		ctx.stroke();
+  };
+  img.src = 'backdrop.png';
+      }
+    }
+  </script>
+  <style type="text/css"> 
+	canvas { border: 1px solid black; } 
+  </style> 
+ </head>
+ <body onload="draw();">
+   <canvas id="my-canvas" width="200" height="150"></canvas>
+ </body>
+</html>
