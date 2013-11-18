@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html lang=en>
+<head>
+    <meta charset=utf-8>
+    <title>HTML Forms - dates and times</title>
+    <style>
+        body
+        {
+            width: 90%;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h3>HTML Forms - dates and times</h3>
+
+    <p>(for Chrome latest only) Working with dates and times:</p>
+
+    <fieldset>
+        <legend>This is a fieldset 'legend'</legend>
+
+        <!--<form id=form1 action=?>-->
+        <form id=form1 method=POST action=http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi>
+
+            <p><label for=tbDate>Select a date...</label><br>
+                <input type=date name=tbDate id=tbDate></p>
+
+            <p><label for=tbDateTime>Select a date and time...</label><br>
+                <input type=datetime name=tbDateTime id=tbDateTime></p>
+
+            <!-- alternate syntax for the 'label' element - enclose the labelled element... -->
+
+            <p><label>Select a time...<br><input type=time name=tbTime></label></p>
+
+            <p><label>Select a month...<br><input type=month name=tbMonth></label></p>
+
+            <p><input type=submit value='Do it'></p>
+
+        </form>
+
+    </fieldset>
+
+    <p id=output></p>
+
+    <p><a href=form_date_time.html>Restart</a></p>
+
+
+</body>
+</html>

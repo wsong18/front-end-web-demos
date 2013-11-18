@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset=utf-8>
+	<title> HTML Forms - Selections </title>
+	<style>
+		body { width: 90%; margin: auto; }
+	</style>
+</head>
+<body>
+	<h3>HTML Forms - Selections</h3>
+	
+	<p>Type text into the input fields, and then click the button:</p>
+
+	<form id=form1 method=POST action=http://www.cs.tut.fi/cgi-bin/run/~jkorpela/echo.cgi>
+	
+	    <fieldset>
+        <legend>Using &lt;input type=checkbox&gt;</legend> 
+			<p>Favourite courses...<br>
+            <input type=checkbox name=myCourse value=int200>INT200<br>
+            <input type=checkbox name=myCourse value=oop244>OOP244<br>
+            <input type=checkbox name=myCourse value=dbs201>DBS201<br>
+            <input type=checkbox name=myCourse value=ibc233>IBC233<br>
+            <input type=checkbox name=myCourse value=dbs301>DBS301<br>
+            <input type=checkbox name=myCourse value=int322>INT322<br>
+            <input type=checkbox name=myCourse value=oop344>OOP344<br>
+            <input type=checkbox name=myCourse value=sys366>SYS366
+            </p>
+		</fieldset><br><br>
+		
+		<fieldset>
+		<legend>Using &lt;input type=radio&gt;</legend> 
+			<p>Favourite course...<br>
+			<input type=radio name=rbgCourse value=int222 checked>INT222<br>
+			<input type=radio name=rbgCourse value=dbs201>DBS201<br>
+			<input type=radio name=rbgCourse value=oop244>OOP244
+			</p>
+
+			<p>Are you sure?<br>
+			<input type=radio name=rbgVerify value=yes checked>Yes<br>
+			<input type=radio name=rbgVerify value=no>No
+			</p>
+		</fieldset><br><br>
+		
+		<fieldset>
+        <legend>Using &lt;input type=select&gt; and options</legend> 
+			<p><label for=selColor1>Favourite colour drop-down list</label><br>
+            <select name=selColor1 id=selColor1 required>
+                <option>Select a colour...</option>
+                <option value=red>Red</option>
+                <option value=green>Green</option>
+                <option value=blue>Blue</option>
+                <option value=white>White</option>
+                <option value=black>Black</option>
+                <option value=plaid>Plaid</option>
+                <option value=transparent>Transparent</option>
+                <option value=rainbow>Rainbow</option>
+            </select></p>
+            
+            <p><label for=selColor2>Favourite colour list, single-select</label><br>
+            <select name=selColor2 id=selColor2 size=4 required>
+                <option value=red>Red</option>
+                <option value=green>Green</option>
+                <option value=blue>Blue</option>
+                <option value=cyan>Cyan</option>
+                <option value=magenta>Magenta</option>
+                <option value=yellow>Yellow</option>
+                <option value=orange>Orange</option>
+                <option value=brown>Brown</option>
+                <option value=grey>Grey</option>
+                <option value=white>White</option>
+                <option value=black>Black</option>
+                <option value=plaid>Plaid</option>
+                <option value=transparent>Transparent</option>
+                <option value=rainbow>Rainbow</option>
+            </select></p>
+
+            <p><label>Favourite colour list, multi-select (with Ctrl/Cmd+click)<br>
+            <select name=selColor3 size=4 multiple>
+                <option value=red>Red</option>
+                <option value=green>Green</option>
+                <option value=blue>Blue</option>
+                <option value=cyan>Cyan</option>
+                <option value=magenta>Magenta</option>
+                <option value=yellow>Yellow</option>
+                <option value=orange>Orange</option>
+                <option value=brown>Brown</option>
+                <option value=grey>Grey</option>
+                <option value=white>White</option>
+                <option value=black>Black</option>
+                <option value=plaid>Plaid</option>
+                <option value=transparent>Transparent</option>
+                <option value=rainbow>Rainbow</option>
+            </select></label></p>
+			
+			<p><label> Favourite GROUPED topics with details: <br>
+		    <select multiple=multiple name=topics_detail size=4>
+				<optgroup label="web design">
+				   <option selected=selected value=HTML5> HTML5 </option>
+				   <option value=frames>CSS</option>
+				   <option value=forms> Forms </option>
+				</optgroup>
+				<optgroup label=programming>
+					<option selected="c language" value="c language"> C language </option>
+					<option value = Java> Java </option>
+				</optgroup>
+			</select></label></p>
+			
+		</fieldset><br><br>
+		
+		<fieldset>
+		<legend>Using &lt;datalist&gt; </legend> 
+			<p>Favourite browser...
+			<input list="browsers" name="browser">
+			<datalist id="browsers">
+			  <option value="Internet Explorer">
+			  <option value="Firefox">
+			  <option value="Chrome">
+			  <option value="Opera">
+			  <option value="Safari">
+			</datalist></p>
+		</fieldset>
+		
+		<p><input type="submit" value="Submit"/> &nbsp; &nbsp;
+        <input type ="reset" value = " Clear "/> </p>
+	</form>
+</html>

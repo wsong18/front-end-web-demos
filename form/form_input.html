@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset=utf-8>
+    <title> HTML Forms - input types </title>
+	<style>
+        body { width: 90%; margin: auto; }
+    </style>
+</head>
+
+<body>
+
+    <h3>HTML Forms - input types</h3>
+	
+	<p>Type text into the input fields, and then click the button:</p>
+    
+	<form id=form1 method=POST action=http://formpost.azurewebsites.net/home/test>
+
+        <p><label for=tbText>Plain text</label><br>
+			<!-- this field is set as autofocus and uses placeholder -->
+            <input name=tbText id=tbText autofocus placeholder='Your name'></p>
+
+        <p><label for=tbPassword>Password</label><br>
+            <input type=password name=tbPassword id=tbPassword></p>
+
+        <p><label for=tbNumber>Number</label><br>
+			<!-- the number entered has the limitation of max and min values -->
+            <input type=number name=tbNumber id=tbNumber min=33 max=66></p>
+
+        <p><label for=tbEmail>Email</label><br>
+			<!-- this field is a reqiuired field and is set to autocomplete -->
+            <input type=email name=tbEmail id=tbEmail required autocomplete></p>
+
+        <p><label for=tbUrl>Url</label><br>
+            <input type=url name=tbUrl id=tbUrl></p>
+
+
+		<p><label for=tbUrl>tel</label><br>
+            <input type=tel name=tbTel id=tbTel></p>
+
+		<p><label for=tbHidden>Hidden</label><br>
+            <input type=hidden name=tbHidden id=tbHidden value=Canada></p>
+			
+		<p><label for=tbRange>Range</label><br>
+            Points: 0<input type=range name=tbRange id=tbRange step="0.5" min="1" max="10">10</p>
+
+		<p><label for=tbSearch>Search</label><br>
+            <input type=search name=tbSearch id=tbSearch ></p>	
+			
+		<p><label for=tbTextarea>Textarea</label><br>
+			<textarea name=tbTextarea id=tbTextarea cols=30 rows=8>Comments:
+			</textarea></p>
+		
+		<!-- can choose multiple files due to the "multiple" attribute -->
+		<p><label for=tbFile>Select a file</label><br>
+			<input type=file name=tbFile id=tbFile multiple></p>
+			
+        <p><input type=submit value='Submit'></p>
+
+    </form>
+
+    <p id=output></p>
+    
+    <p><a href=form_input.html>Restart</a></p>
+
+</html>

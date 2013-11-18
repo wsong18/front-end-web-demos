@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset=utf-8>
+    <title>HTML Forms 1</title>
+    <style>
+        body { width: 90%; margin: auto; }
+    </style>
+</head>
+
+<body>
+	<h2> Simple forms </h2>
+
+	<h4>1. Simple form which will send a GET (default) request</h4>
+
+	<form action="http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl">
+	 First Name:
+	  <input id="fname" type="text" name="fname">
+	  <p><label for="lname">Last Name: </label>
+	  <input id="lname" type="text" name="lname"></p>
+	  <p><input type="submit" value="Submit"></p>
+	</form>
+	<br/>
+
+	
+	<h4>2. Simple form which will send a GET request to a CGI/web app</h4>
+
+	<form action="http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl" >
+	Student ID:<input type="text" name="student_id" required>
+	  <p><label>Password:<input type="password" name="password"></label></p>
+	  <p><button type="submit">Send</button></p>
+	</form>
+	<br/>
+
+	
+	<h4>3. Simple form which will send a POST request to a CGI/web app</h4>
+
+	<form action="http://formpost.azurewebsites.net/home/test" method=post>
+	  <p><label>email:<input type="email" name="email"></label></p>
+	  <fieldset>
+	    <legend> Program </legend>
+	    <label> <input type=radio name=program value=cpd> CPD </label><br/>
+	    <label> <input type=radio name=program value=cpa> CPA </label><br/>
+	    <label> <input type=radio name=program value=bsd> BSD </label><br/>
+	  </fieldset>
+	  <p><input type="submit" value="Save"></p>
+	</form>
+	<br/>
+
+    
+	<h4>4. Simplle form for in-browser processing - simple round-trip</h4>
+    
+    <p>Type text into the input field, and then click the button:</p>
+    
+    <form id=form4>
+        <p><input name=inputBox autofocus></p>
+        <p><input type=button value='Do it' onclick='doit();'></p>
+    </form>
+
+    <div><p id=output>(nothing yet)</p></div>
+	<br/><br/><br/>
+	
+	<script>
+        function doit () {
+            
+            // get (save) the user input
+            var input = document.forms['form4'].inputBox.value;
+            
+            // clear the user input
+            document.forms['form4'].inputBox.value = '';
+
+            // get a reference to the output element
+            var output = document.querySelector('#output');
+
+            // replace its current node value
+            output.childNodes[0].nodeValue = "You entered: " + input;
+            
+            // notice that the above two statements could be combined into one
+            //document.querySelector('#output').childNodes[0].nodeValue = input;
+            
+            // the 'autofocus' attribute works on form load,
+            // so you must assert it if you want the behaviour to continue
+            document.forms['form1'].inputBox.focus();
+
+        }
+    </script>
+</body>
+</html>
