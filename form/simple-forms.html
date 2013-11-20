@@ -25,7 +25,7 @@
 	
 	<h4>2. Simple form which will send a GET request to a CGI/web app</h4>
 
-	<form action="http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl" >
+	<form action="http://www.htmlcodetutorial.com/cgi-bin/mycgi.pl" method=get>
 	Student ID:<input type="text" name="student_id" required>
 	  <p><label>Password:<input type="password" name="password"></label></p>
 	  <p><button type="submit">Send</button></p>
@@ -80,7 +80,7 @@
             
             // the 'autofocus' attribute works on form load,
             // so you must assert it if you want the behaviour to continue
-            document.forms['form1'].inputBox.focus();
+            document.forms['form4'].inputBox.focus();
 
         }
     </script>
