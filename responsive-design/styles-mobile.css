@@ -1,0 +1,77 @@
+
+body {
+  font-size: 0.75em;
+  font-family: verdana, arial, helvetica, sans-serif;
+  margin: 0 5%;
+  max-width: 320px;
+}
+  
+header, aside, footer {
+  display: none;
+}
+
+.forPrinter {
+  border: 1px solid black;
+  margin: 5px 0;
+  padding: 5px;
+  text-align: center;
+}
+
+img {
+  border: 0;
+  max-width: 250px;
+  float: none;
+  margin-left: 5%;
+}
+
+.profile img {
+  max-width: 100px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  width: 40%;
+  float: left;
+  background-color: gainsboro;
+  margin: 5px 5%;
+  text-align: center;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.5em 0;
+}
+
+nav ul li a:link, nav ul li a:visited {
+  text-decoration: none;
+  color: black;
+  font-size: 1.2em;
+}
+
+.highlighted1 {
+  margin: 0 5%;
+  font-style: italic;
+}
+
+table tr th, table tr td {
+  padding: 5px 5px 5px 0;
+}
+
+.border1 {
+  border-collapse: collapse;
+}
+
+.border1 td, .border1 th {
+  border: 1px solid black;
+  padding: 0.2em;
+}
+
+.border1 .noborder {
+  border-style: none;
+}
+

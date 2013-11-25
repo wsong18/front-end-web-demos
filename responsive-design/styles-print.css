@@ -1,0 +1,71 @@
+
+body {
+  font-size: 12pt;
+  font-family: garamond, "times new roman", serif;
+  background-color: white;
+  color: black;
+}
+  
+header, nav, aside { display: none; }
+
+.forPrinter { display: block; }
+
+.forPrinter h2 {
+  border-bottom: 2px solid black;
+  margin-top: 0;
+}
+  
+h1, h2, h3, h4 {
+  font-family: arial, helvetica, sans-serif;
+  padding: 0;
+  margin: 0.5em 0 0.25em 0;
+}
+
+h2 { page-break-before: always; }
+  
+div h2:first-child { page-break-before: auto; }
+ 
+img { border: none; }
+
+.highlighted1 {
+  border: 1px dotted black;
+  padding: 0.1em 0.5em;
+  font-style: italic;
+}
+
+.profile {
+  clear: both;
+  margin: 0 5%;
+  overflow: auto;
+}
+
+.profile img { 
+  float: left; 
+  margin: 0 2.0em 1.0em 0;
+}
+
+a:link, a:visited { text-decoration: none; }
+
+a:link:after, a:visited:after {
+  content: " ("attr(href)")";
+  font-size: 60%;
+  font-family: monospace;
+}
+  
+td a:link:after, td a:visited:after {
+  content: "\a"attr(href);
+  font-size: 60%;
+  font-family: monospace;
+}
+
+.border1 {
+  border-collapse: collapse;
+  page-break-inside: avoid;
+}
+
+.border1 td, .border1 th {
+  border: 1px solid black;
+  padding: 0.2em;
+}
+
+.border1 .noborder { border-style: none; }
