@@ -27,4 +27,12 @@ function show_gallery(number)
   gallery.innerHTML += "</div>";
 }
 
+function show_date() 
+{
+  var d = new Date();
+  var ftr = document.getElementById("today");
+  ftr.innerHTML = "<h4>&nbsp;&nbsp;" + d.toLocaleString() + "</h4>";
+}
+
+window.onload = show_date();
 window.onload = show_gallery(0);
