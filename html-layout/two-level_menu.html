@@ -4,16 +4,9 @@
     <title>Two Level Menu</title>
     <style>
     .container {
-      width: 960px;
+      width: 1000px;
       margin: auto;
     }
-    .clear {
-      clear:both;
-    }
-    a {
-      color: #222;
-    }
-
     nav ul {
       list-style: none;
       margin: 0;
@@ -22,11 +15,9 @@
     nav ul li {
       display: block;
       float: left;
-      background-color: #99dd99;
-      padding-left: 10px;
-      padding-right: 10px;
-      padding-bottom: 5px;
-      padding-top: 5px;
+      color:#000000;
+      background-color: #cccccc;
+      padding: 5px 10px;
       margin-right: 20px;
       position: relative;
     }
@@ -40,42 +31,57 @@
     }
     nav li:hover > ul li {
       float: none;
-      background-color: #8e8;
-      padding-top: 5px;
-      padding-bottom: 5px;
+      width:130px;
+      color: #000000;
+      background-color: #cccccc;
+      padding: 5px 1px;
+      border: 1px solid; 
     }
+    .clear {
+      clear:both;
+    }
+    footer section p {
+           text-align:center;
+     }
     </style>
   </head>
   <body>
     <div class="container">
       <header>
-        <h1>Two Level Menu</h1>
+        <h1>INT222 - Winter 2014 Semester - Seneca @ York Campus </h1>
         <nav>
           <ul>
-            <li>
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="#">Profile</a>
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a>
               <ul>
-                <li><a href="#">Edit</a></li>
-                <li><a href="#">Unpublish</a></li>
-                <li><a href="#">Remove</a></li>
+                <li><a href="#">Sub Option 3-1</a></li>
+                <li><a href="#">Sub Option 3-2</a></li>
+                <li><a href="#">Sub Option 3-3</a></li>
               </ul>
             </li>
-            <li>
-              <a href="#">Logout</a>
-            </li>
+            <li><a href="#">Option 4</a>
+              <ul>
+                <li><a href="#">Sub Option 4-1</a></li>
+                <li><a href="#">Sub Option 4-2</a></li>
+                <li><a href="#">Sub Option 4-3</a></li>
+              </ul>
+           </li>
+            <li><a href="#">Option 5</a></li>
           </ul>
         </nav>
       </header>
       <div class=clear></div>
       <article>
-        <h1>Single Level Menu</h1>
-        <p>Lorem ipsum</p>
+        <h1>Main Page - Multi Level Menu Options - Horizontal</h1>
+        <p>Blah, blah, blah, blah, blah, blah, blah, blah, blah, blah . . . . . . . </p>
       </article>
       <footer>
-        <h3>A demo</h3>
+        <section>
+          <script>
+            var dt=new Date(document.lastModified);   // Get document last modified date
+            document.write('<p>This page was last updated on '+dt.toLocaleString() + '</p>');
+          </script>
       </footer>
     </div>
   </body>
