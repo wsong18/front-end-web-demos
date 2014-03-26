@@ -5,16 +5,15 @@
    <title>JSON - Example</title>
    <style>
       body {width: 80%; margin:auto;}
-	  #table-1 td {padding:5px;}
-      #table-1 td:first-child {color: blue; font-weight: bolder;}
-      #table-1 tr:nth-child(2n+1) {background: #c9c9c9;}
+      #table-1 tr:first-child td {color: blue; font-weight: bolder; font-family: monospace; font-size:1.2em;}
+      #table-1 tr:nth-child(2n+1) {background: #d8d8d8;}
       #table-1 tr:nth-child(2n) {background: #f0f0f0;}
    </style>
    <script type="text/javascript">
       var httpRequest;
     
       function makeRequest() {
-        var url = 'https://zenit.senecac.on.ca/~wei.song/data/firstnation.json'; 
+        var url = 'https://zenit.senecac.on.ca/~wei.song/data/nationArray.json'; 
 
         // make an HTTP request object
         if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -51,17 +50,20 @@
           // check the respone code
           if (httpRequest.status === 200) {
             // Javascript function JSON.parse to parse JSON data
-            var jsObj = JSON.parse(httpRequest.responseText);
-    
-            // jsObj variable now contains the data structure and can
-            // be accessed as jsObj.name.
-            document.getElementById("OfficialName").innerHTML =  jsObj.OfficialName;
-            document.getElementById("Address").innerHTML =  jsObj.Address;
-            document.getElementById("PostalCode").innerHTML =  jsObj.PostalCode;
-            document.getElementById("CenterLat").innerHTML =  jsObj.CenterLat;
-            document.getElementById("CenterLong").innerHTML =  jsObj.CenterLong;
-            document.getElementById("CommunitySite").innerHTML =  
-				"<a href='" + jsObj.CommunitySite + "'>" + jsObj.CommunitySite + "</a>";
+            var jsArray = JSON.parse(httpRequest.responseText);
+			
+            var str = "<table id=table-1>" ;
+			str += "<tr><td>Official Name</td><td>Address</td><td>Postal Code</td><td>Latitude</td><td>Longitude</td><td>Community Site</td></tr>";
+			for (var i=0; i<jsArray.length; i++) { 
+			  str += "<tr><td>" + jsArray[i].OfficialName + "</td>";
+			  str += "<td>" + jsArray[i].Address + "</td>";
+			  str += "<td>" + jsArray[i].PostalCode + "</td>";
+			  str += "<td>" + jsArray[i].CenterLat + "</td>";
+			  str += "<td>" + jsArray[i].CenterLong + "</td>";
+			  str += "<td><a href='" + jsArray[i].CommunitySite + "'>" + jsArray[i].CommunitySite + "</a></td></tr>";
+			}
+			str += "</table>";
+			document.getElementById("data").innerHTML = str;
           } else {
             alert('There was a problem with the request.');
           }
@@ -70,17 +72,9 @@
    </script>
  </head>
  <body>
-   <h2>A First Nation</h2>
-   <table id="table-1" border="0">
-   <tr><td>Official Name</td><td><div id="OfficialName"></div></td></tr>
-   <tr><td>Address</td><td><div id="Address"></div></td></tr>
-   <tr><td>Postal Code</td><td><div id="PostalCode"></div></td></tr>
-   <tr><td>Center Lat</td><td><div id="CenterLat"></div></td></tr>
-   <tr><td>Center Long</td><td><div id="CenterLong"></div></td></tr>
-   <tr><td>Community Site</td><td><div id="CommunitySite"></div></td></tr>
-   </table>
+   <h2>The First Nations</h2>
+   <div id="data"></div>
    <br />
-
-   <button type="ajaxButton" onclick="makeRequest();">Make a request</button>
+   <p><button type="ajaxButton" onclick="makeRequest();">Make a request</button></p>
  </body>
 </html>
